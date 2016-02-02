@@ -18,6 +18,7 @@ time_suffix = time.strftime('-%Y%m%d-%H%M%S')
 output_directory = os.path.join(output_base, job_name + time_suffix)
 
 commands = """echo "Hello, world"
+touch """ + output_directory + """/test_file
 sleep 10"""
 
 ################################################################################
