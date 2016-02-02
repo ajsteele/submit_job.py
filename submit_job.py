@@ -4,8 +4,8 @@ import time
 job_name = 'test_job'
 memory_request = 1 # GB
 runtime = 24 # hours
-working_directory = '~'
-output_base = '~/output'
+working_directory = '/home/username'
+output_base = '/home/username/output'
 use_gpu = False
 
 # if you want to add any extra commands to the SGE script, do so here
@@ -15,10 +15,7 @@ custom_sge = """"""
 # the job name and datetime (you might need it to specify output directory in
 # your script)
 time_suffix = time.strftime('-%Y%m%d-%H%M%S')
-output_directory = os.path.join(
-	os.path.expanduser(output_base),
-	job_name + time_suffix
-)
+output_directory = os.path.join(output_base, job_name + time_suffix)
 
 commands = """echo "Hello, world"
 sleep 10"""
