@@ -6,13 +6,14 @@ Python script to streamline SGE job submission. It creates an output directory w
 
 The script takes a small number of user-edited input variables:
 
-* ``job_name = 'test_job'`` // Give your job an informative name, without spaces.
-* ``memory_request = 1 # GB``
+* ``job_name = 'test_job'`` Give your job an informative name, without spaces.
+* ``memory_request = 1 # GB`` Memory requested _per node_ (see below)
 * ``runtime = 24 # hours``
+* ``nodes = 1`` Number of parallel threads to request. Don't forget that the total memory requested will be multiplied by this number!
 * ``working_directory = '~'``
 * ``output_base = '~/output'``
-* ``use_gpu = False``  // If your job needs a GPU node, set this to true and relevant SGE commands will be added.
-* ``custom_sge = """"""`` // For any special commands you want to send to SGE.
+* ``use_gpu = False``  If your job needs a GPU node, set this to true and relevant SGE commands will be added.
+* ``custom_sge = """"""`` For any special commands you want to send to SGE.
 
 After these have been defined, the ``output_directory`` variable is created by combining ``job_name`` and a date-time string. This is created before the user's commands are specified because you might wish to use it to specify where a script puts its job-related output.
 
