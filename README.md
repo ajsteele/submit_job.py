@@ -1,6 +1,6 @@
 # submit_job.py
 
-Python script to streamline SGE job submission. It creates an output directory with the job name and date-time, writes the .sh job script to that location, and then submits the job to the cluster.
+Python script to streamline SGE job submission. It creates an output directory with the job name and date-time, writes the .sh job script to that location plus a copy of itself for your records, and then submits the job to the cluster.
 
 ### Inputs
 
